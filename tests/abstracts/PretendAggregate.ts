@@ -1,5 +1,5 @@
-import AggregateBase from "../../src/abstracts/AggregateBase";
-import {IEvent} from "../../src/abstracts/Event";
+import AggregateBase from "../../src/Abstracts/AggregateBase";
+import {IEvent} from "../../src/Abstracts/IEvent";
 
 export class FakeAggregate extends AggregateBase{
     public constructor() {

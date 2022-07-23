@@ -1,5 +1,5 @@
 import Guid from '../ValueObjects/Guid';
-import {IEvent} from './Event';
+import {IEvent} from "./IEvent";
 
 export default interface IAggregate{
     Id: Guid;

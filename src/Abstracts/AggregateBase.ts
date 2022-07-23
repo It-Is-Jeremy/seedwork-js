@@ -1,6 +1,6 @@
 import IAggregate from './IAggregate';
 import Guid from '../ValueObjects/Guid';
-import {IEvent} from './Event';
+import {IEvent} from "./IEvent";
 
 export default abstract class AggregateBase implements IAggregate {
   public readonly Id: Guid;
