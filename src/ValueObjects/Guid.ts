@@ -4,7 +4,7 @@ import {InvalidGuidStringError} from './InvalidGuidStringError';
 export default class Guid {
   public readonly Id:string;
 
-  constructor(id:string = '') {
+  public constructor(id:string = '') {
     if (!id) {
       this.Id = uuid();
     } else {

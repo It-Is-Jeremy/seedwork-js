@@ -1,5 +1,5 @@
 import Guid from "../ValueObjects/Guid";
 
-export interface IEvent {
+export default interface IEvent {
     Id: Guid;
 }
