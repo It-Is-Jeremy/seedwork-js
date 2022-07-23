@@ -1,8 +1,8 @@
 {
   "name": "seedwork",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "description": "A basic implementation of Domain Driven Design(DDD) as a npm module.",
+  "main": "index.js",
   "scripts": {
     "test": "jest --config=jest.config.ts",
     "lint": "eslint 'src/**'",
@@ -10,8 +10,9 @@
     "build": "tsc --build ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Jeremy Scott",
   "license": "ISC",
+  "repository": "https://github.com/It-Is-Jeremy/seedwork-js",
   "devDependencies": {
     "@types/jest": "^28.1.6",
     "@types/uuid": "^8.3.4",
