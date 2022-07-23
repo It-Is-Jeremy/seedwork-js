@@ -1,8 +1,8 @@
 import Guid from '../ValueObjects/Guid';
+import {IEvent} from './Event';
 
 export default interface IAggregate{
     Id: Guid;
-    GetEvents: () => Event[];
-    apply: (event:Event) => void;
-    isEqual: (other: IAggregate) => boolean;
+    GetEvents: () => IEvent[];
+    apply: (event:IEvent) => void;
 };

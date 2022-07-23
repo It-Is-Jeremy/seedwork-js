@@ -1,23 +1,22 @@
 import IAggregate from './IAggregate';
 import Guid from '../ValueObjects/Guid';
+import {IEvent} from './Event';
 
 export default abstract class AggregateBase implements IAggregate {
   public readonly Id: Guid;
-  public GetEvents: () => Event[] = () => [...this._events];
+  public GetEvents: () => IEvent[] = () => [...this._events];
 
   protected constructor() {
     this.Id = new Guid();
     this._events = [];
   }
 
-  private readonly _events: Event[];
+  private readonly _events: IEvent[];
 
-  apply(event: Event): void {
+  apply(event: IEvent): void {
     this.handle(event);
     this._events.push(event);
   }
 
-  protected abstract handle(event: Event): void;
-
-  public abstract isEqual(other: IAggregate):boolean;
+  protected abstract handle(event: IEvent): void;
 }
