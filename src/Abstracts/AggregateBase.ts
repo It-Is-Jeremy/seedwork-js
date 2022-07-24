@@ -18,7 +18,7 @@ abstract class AggregateBase implements IAggregate {
     this._events.push(event);
   }
 
-  //protected abstract handle(event: IEvent): void;
+  // protected abstract handle(event: IEvent): void;
 }
 
 export = AggregateBase;

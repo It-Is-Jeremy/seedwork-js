@@ -1,10 +1,14 @@
 import AggregateBase = require('./Abstracts/AggregateBase');
-import IAggregate = require('./Abstracts/IAggregate');
 import Event = require('./Abstracts/Event');
-import IEvent = require('./Abstracts/IEvent');
 import Guid = require('./ValueObjects/Guid');
-import InvalidGuidStringError = require('./ValueObjects/InvalidGuidStringError');
-const {AsyncEventHandlerBase, SynchronousEventHandlerBase } = require('./EventHandlerBase');
+import InvalidGuidStringError =
+  require('./ValueObjects/InvalidGuidStringError');
+import SynchronousEventHandlerBase = require('./SynchronousEventHandlerBase');
+import AsyncEventHandlerBase = require('./AsyncEventHandlerBase');
+import SynchronousEventHandlerRegistry
+  = require('./SynchronousEventHandlerRegistry');
+import AsyncEventHandlerRegistry
+  = require('./AsyncEventHandlerRegistry');
 
 export = {
   AggregateBase,
@@ -12,5 +16,7 @@ export = {
   Guid,
   InvalidGuidStringError,
   AsyncEventHandlerBase,
-  SynchronousEventHandlerBase
+  SynchronousEventHandlerBase,
+  SynchronousEventHandlerRegistry,
+  AsyncEventHandlerRegistry,
 }
