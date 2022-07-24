@@ -1,4 +1,4 @@
-export class InvalidGuidStringError implements Error {
+class InvalidGuidStringError implements Error {
   public constructor(id: string) {
     this.name = 'Invalid Guid string provided';
     this.message = `The following Guid provided was invalid - ${id}`;
@@ -7,3 +7,5 @@ export class InvalidGuidStringError implements Error {
   message: string;
   name: string;
 }
+
+export = InvalidGuidStringError;

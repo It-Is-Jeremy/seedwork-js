@@ -1,5 +1,5 @@
-import {FakeAggregate} from './PretendAggregate';
-import {FakeEvent} from "./FakeEvent";
+import FakeAggregate = require('./PretendAggregate');
+import FakeEvent = require("./FakeEvent");
 
 
 describe('Aggregate Base', ()=> {

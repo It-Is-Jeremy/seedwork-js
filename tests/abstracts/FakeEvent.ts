@@ -1,7 +1,9 @@
 import Event from "../../src/Abstracts/Event";
 
-export class FakeEvent extends Event {
+class FakeEvent extends Event {
     constructor() {
         super();
     }
 }
+
+export = FakeEvent;

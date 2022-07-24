@@ -1,5 +1,7 @@
-import Guid from "../ValueObjects/Guid";
+import Guid = require('../ValueObjects/Guid');
 
-export default interface IEvent {
+interface IEvent {
     Id: Guid;
 }
+
+export = IEvent;

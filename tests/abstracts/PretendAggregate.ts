@@ -1,8 +1,8 @@
-import AggregateBase from "../../src/Abstracts/AggregateBase";
-import IEvent from "../../src/Abstracts/IEvent";
+import AggregateBase = require("../../src/Abstracts/AggregateBase");
+import IEvent = require("../../src/Abstracts/IEvent");
 
-export class FakeAggregate extends AggregateBase{
-    public constructor() {
+class FakeAggregate extends AggregateBase{
+    constructor() {
         super();
     }
 
@@ -12,3 +12,5 @@ export class FakeAggregate extends AggregateBase{
     }
 
 }
+
+export = FakeAggregate;

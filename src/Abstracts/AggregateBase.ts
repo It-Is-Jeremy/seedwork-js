@@ -1,12 +1,12 @@
-import IAggregate from './IAggregate';
-import Guid from '../ValueObjects/Guid';
-import IEvent from "./IEvent";
+import IAggregate = require('./IAggregate');
+import Guid = require('../ValueObjects/Guid');
+import IEvent = require('./IEvent');
 
-export default abstract class AggregateBase implements IAggregate {
+abstract class AggregateBase implements IAggregate {
   public readonly Id: Guid;
   public GetEvents: () => IEvent[] = () => [...this._events];
 
-  public constructor() {
+  constructor() {
     this.Id = new Guid();
     this._events = [];
   }
@@ -20,3 +20,5 @@ export default abstract class AggregateBase implements IAggregate {
 
   protected abstract handle(event: IEvent): void;
 }
+
+export = AggregateBase;

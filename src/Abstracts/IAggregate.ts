@@ -1,8 +1,10 @@
-import Guid from '../ValueObjects/Guid';
-import IEvent from "./IEvent";
+import Guid = require('../ValueObjects/Guid');
+import IEvent = require('./IEvent');
 
-export default interface IAggregate{
+interface IAggregate{
     Id: Guid;
     GetEvents: () => IEvent[];
     apply: (event:IEvent) => void;
-};
+}
+
+export = IAggregate;

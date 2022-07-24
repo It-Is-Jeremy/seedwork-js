@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-export default {
+export default{
   jest: true,
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
@@ -195,10 +195,4 @@ export default {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
-
-module.exports = {
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
 };

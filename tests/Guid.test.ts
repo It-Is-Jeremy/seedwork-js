@@ -1,7 +1,7 @@
-import Guid from '../src/ValueObjects/Guid';
-import { InvalidGuidStringError } from '../src/ValueObjects/InvalidGuidStringError';
-import {v4 as uuid } from 'uuid';
-import {validate} from 'uuid';
+const Guid =  require('../src/ValueObjects/Guid');
+const InvalidGuidStringError = require('../src/ValueObjects/InvalidGuidStringError');
+const {v4} = require('uuid');
+const {validate} = require('uuid');
 
 describe('Guid tests', ()=>{
     it.each([['a'],['asdad'], ['hello world'],['1234']])
@@ -16,7 +16,7 @@ describe('Guid tests', ()=>{
 
     it('Constructs when a valid UUID string is supplied', ()=>{
         //Arrange
-        const value:string = uuid();
+        const value:string = v4();
         //Act
         const guid = new Guid(value);
         //Assert

@@ -1,10 +1,12 @@
-import Guid from '../ValueObjects/Guid';
-import IEvent from "./IEvent";
+import Guid = require('../ValueObjects/Guid');
+import IEvent = require('./IEvent');
 
-export default abstract class Event implements IEvent {
+abstract class Event implements IEvent {
   public readonly Id: Guid;
 
   public constructor() {
     this.Id = new Guid();
   }
 }
+
+export = Event;
