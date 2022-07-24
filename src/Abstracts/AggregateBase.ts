@@ -2,6 +2,7 @@ import IAggregate = require('./IAggregate');
 import Guid = require('../ValueObjects/Guid');
 import IEvent = require('./IEvent');
 
+
 abstract class AggregateBase implements IAggregate {
   public readonly Id: Guid;
   public GetEvents: () => IEvent[] = () => [...this._events];
