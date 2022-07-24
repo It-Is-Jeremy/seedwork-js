@@ -5,7 +5,7 @@ import IEvent = require('./IEvent');
 
 abstract class AggregateBase implements IAggregate {
   public readonly Id: Guid;
-  public GetEvents: () => IEvent[] = () => [...this._events];
+  public getEvents: () => IEvent[] = () => [...this._events];
 
   public constructor() {
     this.Id = new Guid();
@@ -14,12 +14,11 @@ abstract class AggregateBase implements IAggregate {
 
   private readonly _events: IEvent[];
 
-  public apply(event: IEvent): void {
-    this.handle(event);
+  public record(event: IEvent): void {
     this._events.push(event);
   }
 
-  protected abstract handle(event: IEvent): void;
+  //protected abstract handle(event: IEvent): void;
 }
 
 export = AggregateBase;
