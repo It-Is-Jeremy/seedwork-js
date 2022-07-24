@@ -6,14 +6,14 @@ abstract class AggregateBase implements IAggregate {
   public readonly Id: Guid;
   public GetEvents: () => IEvent[] = () => [...this._events];
 
-  constructor() {
+  public constructor() {
     this.Id = new Guid();
     this._events = [];
   }
 
   private readonly _events: IEvent[];
 
-  apply(event: IEvent): void {
+  public apply(event: IEvent): void {
     this.handle(event);
     this._events.push(event);
   }
