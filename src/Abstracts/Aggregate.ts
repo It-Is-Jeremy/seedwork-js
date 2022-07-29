@@ -1,9 +1,9 @@
 import Guid = require('../ValueObjects/Guid');
 import IEvent = require('./IEvent');
-interface IAggregate{
+interface Aggregate {
     Id: Guid;
     getEvents: () => IEvent[];
     record: (event: IEvent) => void;
 }
 
-export = IAggregate;
+export = Aggregate;

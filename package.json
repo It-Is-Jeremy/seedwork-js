@@ -1,6 +1,6 @@
 {
   "name": "seedwork",
-  "version": "1.3.0",
+  "version": "1.3.5",
   "description": "A basic implementation of Domain Driven Design(DDD) as a npm module.",
   "main": "build/src/index.js",
   "type": "commonjs",

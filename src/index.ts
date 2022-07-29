@@ -3,20 +3,15 @@ import Event = require('./Abstracts/Event');
 import Guid = require('./ValueObjects/Guid');
 import InvalidGuidStringError =
   require('./ValueObjects/InvalidGuidStringError');
-import SynchronousEventHandlerBase = require('./SynchronousEventHandlerBase');
-import AsyncEventHandlerBase = require('./AsyncEventHandlerBase');
-import SynchronousEventHandlerRegistry
-  = require('./SynchronousEventHandlerRegistry');
-import AsyncEventHandlerRegistry
-  = require('./AsyncEventHandlerRegistry');
+import EventHandlerBase = require('./EventHandlerBase');
+import EventHandlerRegistry
+  = require('./EventHandlerRegistry');
 
 export = {
   AggregateBase,
   Event,
   Guid,
   InvalidGuidStringError,
-  AsyncEventHandlerBase,
-  SynchronousEventHandlerBase,
-  SynchronousEventHandlerRegistry,
-  AsyncEventHandlerRegistry,
+  EventHandlerBase,
+  EventHandlerRegistry,
 }
