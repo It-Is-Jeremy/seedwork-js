@@ -6,6 +6,9 @@ import InvalidGuidStringError =
 import EventHandlerBase = require('./EventHandlerBase');
 import EventHandlerRegistry
   = require('./EventHandlerRegistry');
+import StateMachine = require("./StateMachine/StateMachine");
+import StateMachineBuilder = require("./StateMachine/StateMachineBuilder");
+import State = require("./StateMachine/State");
 
 export = {
   AggregateBase,
@@ -14,4 +17,7 @@ export = {
   InvalidGuidStringError,
   EventHandlerBase,
   EventHandlerRegistry,
+  StateMachine,
+  StateMachineBuilder,
+  State,
 }
