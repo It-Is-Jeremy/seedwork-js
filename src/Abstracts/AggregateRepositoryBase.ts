@@ -25,7 +25,7 @@ abstract class AggregateRepositoryBase<T extends Aggregate> implements IAggregat
     private async validate(proposedChange: T): Promise<boolean> {
         const currentAggregate = await this.getByAggregateId(proposedChange.Id);
         if(currentAggregate === undefined){
-            throw new AggregateNotFoundException(proposedChange.Id);
+            return true;
         }
 
         if(currentAggregate.getEntityVersion() === proposedChange.getEntityVersion()){
