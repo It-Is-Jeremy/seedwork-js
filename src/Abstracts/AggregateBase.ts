@@ -5,14 +5,38 @@ import IEvent = require('./IEvent');
 
 abstract class AggregateBase implements Aggregate {
   public readonly Id: Guid;
-  public getEvents: () => IEvent[] = () => [...this._events];
+  private readonly _events: IEvent[];
+
+  private _entityVersion:number;
+
+  private _isDeleted: boolean;
+
 
   public constructor() {
     this.Id = new Guid();
     this._events = [];
+    this._entityVersion = 0;
+    this._isDeleted = false;
   }
 
-  private readonly _events: IEvent[];
+  public getEntityVersion(): number {
+    return this._entityVersion;
+  }
+
+  public incrementEntityVersion(): void {
+    this._entityVersion++;
+  }
+
+  public getEvents: () => IEvent[] = () => [...this._events];
+
+  public isDeleted(): boolean {
+    return this._isDeleted;
+  }
+
+  public delete(): void {
+    this._isDeleted = true;
+  }
+
 
   public record(event: IEvent): void {
     this._events.push(event);

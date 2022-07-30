@@ -10,6 +10,7 @@ import StateMachine = require("./StateMachine/StateMachine");
 import StateMachineBuilder = require("./StateMachine/StateMachineBuilder");
 import State = require("./StateMachine/State");
 import Action = require("./StateMachine/Action");
+import AggregateRepositoryBase = require("./Abstracts/AggregateRepositoryBase");
 
 export = {
   AggregateBase,
@@ -22,4 +23,5 @@ export = {
   StateMachineBuilder,
   State,
   Action,
+  AggregateRepositoryBase
 }
