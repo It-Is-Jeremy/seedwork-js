@@ -4,24 +4,25 @@ import Guid from "../ValueObjects/Guid";
 import {AggregateNotFoundException} from "../Errors/AggregateNotFoundException";
 
 abstract class AggregateRepositoryBase<T extends Aggregate> implements IAggregateRepository<T>{
-    abstract getAll(): Promise<Aggregate[]>;
+    abstract getAll(): Promise<T[]>;
 
-    abstract getByAggregateId(id: Guid): Promise<Aggregate>;
+    abstract getByAggregateId(id: Guid): Promise<T>;
 
-    abstract getByPredicate(predicate: (aggregate: Aggregate) => boolean): Promise<Aggregate[]>;
+    abstract getByPredicate(predicate: (aggregate: T) => boolean): Promise<T[]>;
 
-    abstract getFirstByPredicate(predicate: (aggregate: Aggregate) => boolean): Promise<Aggregate>;
+    abstract getFirstByPredicate(predicate: (aggregate: T) => boolean): Promise<T>;
 
-    public async save(aggregate: Aggregate): Promise<void>{
+    public async save(aggregate: T): Promise<void>{
         if(!await this.validate(aggregate)){
             throw new Error("Invalid aggregate entity version");
         }
         await this.upsert(aggregate);
+        return;
     }
 
-    protected abstract upsert(aggregate: Aggregate): Promise<void>;
+    protected abstract upsert(aggregate: T): Promise<void>;
 
-    private async validate(proposedChange: Aggregate): Promise<boolean> {
+    private async validate(proposedChange: T): Promise<boolean> {
         const currentAggregate = await this.getByAggregateId(proposedChange.Id);
         if(currentAggregate === undefined){
             throw new AggregateNotFoundException(proposedChange.Id);
