@@ -9,3 +9,5 @@ interface IAggregateRepository<T extends Aggregate> {
     getFirstByPredicate(predicate: (aggregate: Aggregate) => boolean): Promise<Aggregate>;
     getAll(): Promise<Aggregate[]>;
 }
+
+export = IAggregateRepository;
