@@ -9,6 +9,7 @@ import EventHandlerRegistry
 import StateMachine = require("./StateMachine/StateMachine");
 import StateMachineBuilder = require("./StateMachine/StateMachineBuilder");
 import State = require("./StateMachine/State");
+import Action = require("./StateMachine/Action");
 
 export = {
   AggregateBase,
@@ -20,4 +21,5 @@ export = {
   StateMachine,
   StateMachineBuilder,
   State,
+  Action,
 }

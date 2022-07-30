@@ -1,5 +1,5 @@
 import State from './State';
-import {Action} from './Action';
+import Action from './Action';
 
 export class Transition {
   private readonly _on: Action;

@@ -1,5 +1,5 @@
 import {Transition} from './Transition';
-import {Action} from './Action';
+import Action from './Action';
 import State from './State';
 
 export default class StateBuilder {

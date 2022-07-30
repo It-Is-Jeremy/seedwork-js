@@ -1,11 +1,11 @@
-import {Action} from './Action';
+import Action from './Action';
 import {Transition} from './Transition';
 
 class State {
   public readonly name: string;
   private _transitions: Transition[] = [];
 
-  constructor(stateName: string, transitions: Transition[]) {
+  constructor(stateName: string, transitions: Transition[]=[]) {
     this.name = stateName;
     this._transitions = transitions;
   }

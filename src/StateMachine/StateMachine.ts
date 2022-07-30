@@ -1,5 +1,5 @@
 import State from './State';
-import {Action} from './Action';
+import Action from './Action';
 
 class StateMachine {
   private readonly _states: State[];
@@ -16,12 +16,19 @@ class StateMachine {
     return state.getAcceptableActions();
   }
 
-  public move(stateName: string, action: Action): string {
+  public move(stateName: string, actionName: string): string {
     const state = this._states.find((s) => s.name === stateName);
     if (!state) {
       throw new Error(`State ${stateName} does not exist`);
     }
-    return state.name;
+    const action = new Action(actionName);
+    const newState = this._states.find((s) => s.name === state.move(action).name);
+
+    if(newState === undefined){
+      throw new Error(`State ${stateName} does not exist`);
+    }
+
+    return newState.name;
   }
 }
 
